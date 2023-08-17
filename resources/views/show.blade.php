@@ -15,8 +15,9 @@
     <p>{{ $form->descricao }}</p>
 
     <div>
-        <img src="{{url("storage/{$form->image}")}}" alt=" {{$form->nome}}" style="max-width:100px">
+        <img src="{{url("storage/perfil_form/{$form->image}")}}" alt=" {{$form->nome}}" style="max-width:100px">
     </div>
 
+    <br><a href="{{ route('form.index') }}">Voltar para página inicial.</a>
 </body>
 </html>

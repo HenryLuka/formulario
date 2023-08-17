@@ -23,11 +23,20 @@ class StoreUpdateForm extends FormRequest
      */
     public function rules()
     {
+        if($this->isMethod('post')){
+            return [
+                'nome' => 'required|min:3|max:160',
+                'sobrenome' => 'required|min:3|max:160',
+                'descricao' => 'required|min:3|max:10000',
+                'image' => 'required|mimes:png,jpeg',
+        ];
+        }
+
         return [
             'nome' => 'required|min:3|max:160',
             'sobrenome' => 'required|min:3|max:160',
             'descricao' => 'required|min:3|max:10000',
-            'image' => 'required|mimes:png,jpeg',
+            'image' => 'nullable|mimes:png,jpeg',
         ];
     }
 }

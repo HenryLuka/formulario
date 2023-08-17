@@ -92,7 +92,17 @@ class FormController extends Controller
 
             return redirect()->route('form.editor');
         }
-        $form->update($request->all());
+            $nameFile = Str::of($request->nome)->slug('-') . '.' .$request->image->getClientOriginalExtension(); 
+
+            $image = $request->image->storeAs('perfil_form', $nameFile);
+
+            $form['image'] = $nameFile;
+            $form['nome'] = $request->nome;
+            $form['sobrenome'] = $request->sobrenome;
+            $form['descricao'] = $request->descricao;
+
+
+            $form->save();
 
         return redirect()
                 ->route('form.panel')

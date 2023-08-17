@@ -30,5 +30,7 @@
             </ul>        
         </div>
 
+        <br><a href="{{ route('form.index') }}">Voltar para página inicial.</a>
+
 </body>
 </html>

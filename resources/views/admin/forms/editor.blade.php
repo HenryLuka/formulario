@@ -13,7 +13,7 @@
         @method('put')
 
         <label for="image">Imagem de Apresentação</label><br>
-            <input type="file" name="image" id="image"><br><br>
+            <input type="file" name="image" id="image" value="{{$form->image}}"><br><br>
                 <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome" placeholder="Nome" value="{{$form->nome}}"><br><br>
                         <label for="sobrenome">Sobrenome:</label>
